@@ -1,4 +1,4 @@
-# Blueprint for docker image 
+# Blueprint for Docker image 
 
 FROM mysql: 8.0
 
@@ -10,8 +10,8 @@ RUN echo "[mysqld]" >> /etc/mysql/my.cnf && \
     echo "secure_file_priv=/var/lib/mysql-files" >> /etc/mysql/my.cnf && \
     echo "local_infile=1" >> /etc/mysql/my.cnf
 
-# copy CSV into the location MySQL in allowed to read from
+# copy CSV into the location MySQL is allowed to read from
 COPY data/yourfile.csv /var/lib/mysql-files/yourfile.csv
 
-# Scripts in docker-entrypoint-initdb.d run automaticlly on first startup
+# Scripts in docker-entrypoint-initdb.d run automatically on first startup
 COPY init/01-import.sql /docker-entrypoint-initdb.d/
