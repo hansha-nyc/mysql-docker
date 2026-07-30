@@ -1,6 +1,6 @@
 # Blueprint for Docker image 
 
-FROM mysql: 8.0
+FROM mysql:8.0
 
 ENV MYSQL_ROOT_PASSWORD=P@$Sw0Rd321
 ENV MYSQL_DATABASE=mydb 
